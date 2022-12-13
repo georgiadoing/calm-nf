@@ -15,7 +15,7 @@ Parameter | Default | Description
 
 --gen_org | mouse | Options: mouse and human.
 
---read_prep | 'stranded' | Options: 'stranded' or 'non_stranded'. This determines how RNA quantification is done, and statistics are calculated.
+--read_prep | 'reverse_stranded' | Options: 'reverse_stranded', 'forward_stranded' or 'non_stranded'. This determines how RNA quantification is done, and statistics are calculated. It is based on the library strandedness. 
 
 --min_pct_hq_reads| '0.0' | The minimum percent of high-quality reads passing when trimming the fastq files.
 --rsem_ref_files | /projects/omics_share/mouse/GRCm38/transcriptome/indices/ensembl/v102/bowtie2 | Pre-compiled index files. Refers to human indices when --gen_org human. JAX users should not change this, unless using STAR indices.
@@ -35,13 +35,11 @@ Parameter | Default | Description
                  | Human: '/projects/omics_share/human/GRCh38/transcriptome/annotation/ensembl/v104/Homo_sapiens.GRCh38.104.chr_patch_hapl_scaff.rRNA.interval_list'
                  | The coverage metric calculation step requires this file. Refers to human assembly when --gen_org human. JAX users should not change this parameter.
 
-There are three additional parameters that are human specific. They are: 
+There are two additional parameters that are human specific. They are: 
 
 Parameter| Default| Description
 
 --ref_fa | '/projects/omics_share/human/GRCh38/genome/sequence/ensembl/v104/Homo_sapiens.GRCh38.dna.toplevel.fa'| Reference fasta to be used in alignment calculation as well as any downstream analysis. JAX users should not change this parameter.
 --ref_fai | '/projects/omics_share/human/GRCh38/genome/sequence/ensembl/v104/Homo_sapiens.GRCh38.dna.toplevel.fa.fai' | Reference fasta index file.  JAX users should not change this parameter.
---probes | '/projects/omics_share/human/GRCh38/supporting_files/capture_kit_files/agilent/v4/hg38_agilent_SureSelect_V4_pChrM_probes_genename.bed'| The coverage metric calculation step requires this file. JAX users should not change this parameter.
---ctp_genes | '/projects/omics_share/human/GRCh38/supporting_files/capture_kit_files/359genes_b38_noheader_withNames.bed'| The coverage metric calculation step requires this file. JAX users should not change this parameter.
 '''
 }
